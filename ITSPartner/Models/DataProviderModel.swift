@@ -11,19 +11,17 @@ import Foundation
 class DataProviderModel {
     let semaphore = DispatchSemaphore(value: 0)
     // Data obtained from API.
-//    var data = [[String: Any]](),
-    var data = [Any?]()
+    var data = [[String: Any]]()
     
     func getMainData() {
-        let url = URL(string: "https://reqres.in/api/users?page=2")
+        let url = URL(string: "https://my.api.mockaroo.com/persons.json?key=f43efc60")
         URLSession.shared.dataTask(with: url!) { (Data, URLResponse, Error) in
             defer { self.semaphore.signal() }
             do {
-//                var jsonData = try JSONSerialization.jsonObject(with: Data!, options: []) as! [[String: Any]]
-//                let dataWithAges = self.calcAge(jsonData: &jsonData)
-//                self.data = dataWithAges
-//                UserDefaults.standard.set(jsonData, forKey: "test")
-                self.data = UserDefaults.standard.array(forKey: "test")!
+                var jsonData = try JSONSerialization.jsonObject(with: Data!, options: []) as! [[String: Any]]
+                let dataWithAges = self.calcAge(jsonData: &jsonData)
+                self.data = dataWithAges
+                UserDefaults.standard.set(dataWithAges, forKey: "mainData")
             } catch {
                 print(Error ?? "Something get wrong")
             }

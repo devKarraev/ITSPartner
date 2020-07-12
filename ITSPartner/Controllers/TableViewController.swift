@@ -38,7 +38,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: filterByAgeValue), style: .done, target: self, action: #selector(filterByAge(sender:)))
-        self.mainData = UserDefaults.standard.array(forKey: "test")! as! [[String: Any]]
+        self.mainData = UserDefaults.standard.array(forKey: "mainData")! as! [[String: Any]]
         self.tableView.reloadData()
     }
     
@@ -62,7 +62,7 @@ class TableViewController: UITableViewController {
     // Filter main data based on current UISegmentedControl value and value of filterByAge value.
     func filterCurrentData(segment: String, filterByAge: String) {
         if self.castedData.count == 0 {
-            self.castedData = UserDefaults.standard.array(forKey: "test")! as! [[String: Any]]
+            self.castedData = UserDefaults.standard.array(forKey: "mainData")! as! [[String: Any]]
         }
         
         if isFilterByAgeChanged {
@@ -137,7 +137,7 @@ class TableViewController: UITableViewController {
         self.isRefreshButtonTappped = false
         self.createLoadingAlert {
             self.dataProvider.getMainData()
-            self.mainData = self.dataProvider.data as! [[String: Any]]
+            self.mainData = UserDefaults.standard.array(forKey: "mainData")! as! [[String: Any]]
             self.tableView.reloadData()
         }
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
