@@ -15,6 +15,7 @@ class DataProviderModel {
     
     func getMainData() {
         let url = URL(string: "https://my.api.mockaroo.com/persons.json?key=f43efc60")
+        guard url != nil else { return }
         URLSession.shared.dataTask(with: url!) { (Data, URLResponse, Error) in
             defer { self.semaphore.signal() }
             do {

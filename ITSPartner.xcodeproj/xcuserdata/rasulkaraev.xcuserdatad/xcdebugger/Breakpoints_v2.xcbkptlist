@@ -14,8 +14,8 @@
             filePath = "ITSPartner/Models/DataProviderModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "calcAge(jsonData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6FA34AD7-7D47-45DC-8351-A2E6E5F354A9"
+            uuid = "FC83B8DC-4072-4303-9575-82522C981550"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ITSPartner/Controllers/CollectionViewController.swift"
+            filePath = "ITSPartner/Models/DataProviderModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "getData()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "calcAge(jsonData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

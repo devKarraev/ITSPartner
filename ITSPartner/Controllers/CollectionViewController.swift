@@ -64,6 +64,7 @@ class CollectionViewController: UICollectionViewController {
     func getData() {
         self.createLoadingAlert {
             self.dataProvider.getMainData()
+            guard UserDefaults.standard.array(forKey: "mainData") != nil else { return }
             self.mainData = UserDefaults.standard.array(forKey: "mainData")! as! [[String: Any]]
             self.collectionView.reloadData()
         }
@@ -98,6 +99,7 @@ class CollectionViewController: UICollectionViewController {
     
     // Filter main data based on current UISegmentedControl value and value of filterByAge value.
     func filterCurrentData(segment: String, filterByAge: String) {
+        guard UserDefaults.standard.array(forKey: "mainData") != nil else { return }
         if self.castedData.count == 0 {
             self.castedData = UserDefaults.standard.array(forKey: "mainData")! as! [[String: Any]]
         }
